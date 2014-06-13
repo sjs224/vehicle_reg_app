@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   
   get 'static_pages/home'
   match '/register',  to: 'users#new',            via: 'get'
-  match '/login',     to: 'users#new',            via: 'get'
   match '/login',     to: 'sessions#new',         via: 'get'
   match '/logout',    to: 'sessions#destroy',     via: 'delete'
 
