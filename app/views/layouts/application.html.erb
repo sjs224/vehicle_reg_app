@@ -9,6 +9,17 @@
 <body>
 
     <div class="container">
+      <nav>
+        <ul class="nav pull-right">
+          <% if signed_in? %>
+            <li><%= link_to "Users", '#' %></li>
+              <li><%= link_to "Sign out", logout_path, method: "delete" %></li>
+          <% else %>
+            <li><%= link_to "Sign in", login_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
