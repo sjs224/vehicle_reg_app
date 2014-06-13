@@ -1,1 +1,31 @@
-<%= @user.name %>, <%= @user.email %>
+<% provide(:title, @user.name) %>
+
+<h2> Hello <%= @user.name %> </h2>
+<p><%= link_to "Add new vehicle", '/vehicles/new' %></p>
+
+<% if @user.vehicles.size == 0 %>
+	<p>No vehicles registered</p>
+<% else %>
+  <table>
+	<tr>
+		<th>Licence Plate</th>
+		<th>Make</th>
+		<th>Model</th>
+		<th>Colour</th>
+		<th>Year</th>
+		<th>Edit</th>
+		<th>Remove</th>
+	</tr>
+	<% v = @user.vehicles.all do |vehicle| %>
+	  <tr>
+		<td><%= v.licence_plate %></td>
+		<td><%= v.make %></td>
+		<td><%= v.model %></td>
+		<td><%= v.colour %></td>
+		<td><%= v.year %></td>
+		<td><%= link_to "Edit", edit_vehicles_path(v) %></td>
+		<td><%= link_to "Remove", v, method: :delete %></td>
+	  </tr>
+	<% end %>
+  </table>
+<% end %>

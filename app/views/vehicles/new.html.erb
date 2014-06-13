@@ -1,0 +1,27 @@
+<% provide(:title, 'Add vehicle') %>
+<h1>Add new vehicle</h1>
+<p NOTE : Licence plate and make are required fields /p>
+
+<div class="row">
+	<div class="span6 offset3">
+	  <%= form_for(@vehicle) do |v| %>
+
+		<%= v.label :Licence %>
+		<%= v.text_field :licence_plate %>
+
+		<%= v.label :make %>
+		<%= v.text_field :make %>
+
+		<%= v.label :model %>
+		<%= v.text_field :model %>
+
+		<%= v.label :colour %>
+		<%= v.text_field :colour %>
+
+		<%= v.label :year %>
+		<%= v.text_field :year %>
+
+		<%= v.submit "Add Vehicle", class: "btn btn-large btn-primary" %>
+	<% end %>
+  </div>
+</div>

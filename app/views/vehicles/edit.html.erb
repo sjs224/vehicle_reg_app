@@ -1,0 +1,27 @@
+<% provide(:title, "Edit Vehicle") %>
+<h1>Update your vehicle information</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@vehicle) do |f| %>
+      <%= render 'shared/error_messages' %>
+      <%= f.label :Licence %>
+      <%= f.text_field :licence_plate %>
+
+      <%= f.label :make %>
+      <%= f.password_field :make %>
+
+      <%= f.label :model %>
+      <%= f.text_field :model %>
+
+      <%= f.label :colour %>
+      <%= f.text_field :colour %>
+
+      <%= f.label :year %>
+      <%= f.text_field :year %>
+
+      <%= f.submit "Save Changes", class: "btn btn-large btn-primary" %>
+    <% end %>
+
+  </div>
+</div>

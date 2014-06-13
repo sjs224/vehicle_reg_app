@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  licence_plate: MyString
+  make: MyString
+  model: MyString
+  colour: MyString
+  year: 1
+  user_id: 1
+
+two:
+  licence_plate: MyString
+  make: MyString
+  model: MyString
+  colour: MyString
+  year: 1
+  user_id: 1
