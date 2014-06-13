@@ -24,7 +24,8 @@
 		<td><%= v.colour %></td>
 		<td><%= v.year %></td>
 		<td><%= link_to "Edit", edit_vehicles_path(v) %></td>
-		<td><%= link_to "Remove", v, method: :delete %></td>
+		<td><%= link_to "Remove", v, method: :delete,
+							 data: { confirm: "You sure?" } %></td>
 	  </tr>
 	<% end %>
   </table>
